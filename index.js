@@ -18,7 +18,7 @@ async function invokeAction({ action, id, name, email, phone }) {
         case 'list':
             const contacts = await contactsOperations.listContacts();
 
-            if (!contacts) {
+            if (contacts === []) {
                 throw new Error(`The database is empty`)
             }
 
